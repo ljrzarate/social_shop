@@ -1,0 +1,21 @@
+<div id="user-info" class="well">
+  <div>
+    <%= link_to "Salir", destroy_user_session_path, method: :delete %>
+
+  </div>
+  <div class="text-center">
+    <%= render 'shared/avatar', user: @user %><br>
+    <h5><%= link_to @user.name, @user %></h5>
+  </div>
+  <h5>
+    <%= fa_icon 'shield' %>
+    <%= pluralize(@user.posts.count, 'post') %>
+  </h5>
+  <br>
+  <div class="text-center">
+    <% if current_user != @user %>
+      <%= render 'follows/form', user: @user %>
+      <h6><%= 'Follows you' if current_user.followed_by?(@user) %></h6>
+    <% end %>
+  </div>
+</div>
