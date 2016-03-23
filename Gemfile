@@ -42,11 +42,16 @@ gem 'acts_as_commentable'
 gem "acts_as_follower"
 gem 'public_activity'
 gem 'will_paginate', '~> 3.0.6'
+gem 'koala'
 
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+gem 'omniauth-instagram', '~> 1.0', '>= 1.0.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'pry'
 end
 
 group :development do
